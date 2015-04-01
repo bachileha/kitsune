@@ -48,6 +48,8 @@ def update_assets(ctx):
     with ctx.lcd(settings.SRC_DIR):
         ctx.local("python2.7 manage.py nunjucks_precompile")
         ctx.local("./node_modules/.bin/bower install --allow-root")
+        # Delete generated static files.
+        ctx.local("git clean -fXd -- static")
         ctx.local("python2.7 manage.py collectstatic --noinput")
 
 
