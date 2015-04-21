@@ -6,6 +6,7 @@ env:
   globals:
   - DJANGO_LIVE_TEST_SERVER_ADDRESS="localhost:9900-9999"
   - PIP_DOWNLOAD_CACHE="pip_cache"
+  - REUSE_DB=true
   matrix:
   - TEST_SUITE=lint
   - TEST_SUITE=django ELASTICSEARCH_VERSION=0.90.10
